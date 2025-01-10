@@ -1,0 +1,23 @@
+name: Deployment of Application Rev
+on:
+    push:
+        branches: 
+        - master
+jobs: 
+    DeploymentApp:
+        runs-on: ubuntu-latest
+        steps:
+        - name: "checkout from workflows"
+          uses: actions/checkout@v4
+        
+        - name: "Build the Docker image"
+          run: |
+            docker build -t theoafactor/rev_app:1 .
+
+        - name: "LOgin to Docker"
+          run: |
+            docker login -u theoafactor -p ${{ secrets.DOCKERHUB_PASSWORD }}
+
+        - name: "Push the Docker image to the Hub"
+          run: |
+            docker push theoafactor/rev_app:1
