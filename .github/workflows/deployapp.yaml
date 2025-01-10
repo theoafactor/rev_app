@@ -27,8 +27,8 @@ jobs:
         - name: "Go to the repo for Helm"
           run: |
 
-            git config user.email "theoafactor@gmail.com"
-            git config user.name "Olu Adeyemo"
+            git config --global user.email "theoafactor@gmail.com"
+            git config --global user.name "Olu Adeyemo"
             git clone https://github.com/theoafactor/rev_app_helm.git rev_app_helm
             cd rev_app_helm 
             cd rev-app-chart/templates
