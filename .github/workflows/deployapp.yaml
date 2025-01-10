@@ -3,6 +3,7 @@ on:
     push:
         branches: 
         - master
+
 jobs: 
     DeploymentApp:
         runs-on: ubuntu-latest
@@ -21,3 +22,11 @@ jobs:
         - name: "Push the Docker image to the Hub"
           run: |
             docker push theoafactor/rev_app:1
+
+
+        - name: "Go to the repo for Helm"
+          run: |
+            git clone https://github.com/theoafactor/rev_app_helm.git rev_app_helm
+            cd rev_app_helm 
+            cd rev-app-chart/templates
+            
