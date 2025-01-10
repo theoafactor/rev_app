@@ -34,7 +34,8 @@ jobs:
             cd rev-app-chart/templates
             sed -i 's/rev_app:1/rev_app:2/' deployment.yaml
             
+            cat deployment.yaml
 
-            git add -A
-            git commit -m "Updated helm"
-            git push origin master
+            # git add -A
+            # git commit -m "Updated helm"
+            # git push origin master
