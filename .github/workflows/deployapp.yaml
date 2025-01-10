@@ -13,7 +13,7 @@ jobs:
         
         - name: "Build the Docker image"
           run: |
-            docker build -t theoafactor/rev_app:1 .
+            docker build -t theoafactor/rev_app:2 .
 
         - name: "LOgin to Docker"
           run: |
@@ -21,7 +21,7 @@ jobs:
 
         - name: "Push the Docker image to the Hub"
           run: |
-            docker push theoafactor/rev_app:1
+            docker push theoafactor/rev_app:2
 
 
         - name: "Go to the repo for Helm"
@@ -29,4 +29,8 @@ jobs:
             git clone https://github.com/theoafactor/rev_app_helm.git rev_app_helm
             cd rev_app_helm 
             cd rev-app-chart/templates
-            
+            sed -i 's/rev_app:1/rev_app:2/' deployment.yaml
+
+            git add -A
+            git commit -m "Updated helm"
+            git push origin master
