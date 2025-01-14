@@ -37,4 +37,4 @@ jobs:
             cat deployment.yaml
             git add -A
             git commit -m "Updated helm"
-            # git push origin master
+            git push origin master
