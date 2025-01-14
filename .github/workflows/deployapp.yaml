@@ -34,7 +34,7 @@ jobs:
             cd rev-app-chart/templates
             sed -i 's/rev_app:1/rev_app:2/' deployment.yaml
             
-            get remote set-url origin https://${{ secrets.PROJECT_TOKEN }}@github.com/theoafactor/rev_app_helm.git
+            git remote set-url origin https://${{ secrets.PROJECT_TOKEN }}@github.com/theoafactor/rev_app_helm.git
 
             cat deployment.yaml
             git add -A
