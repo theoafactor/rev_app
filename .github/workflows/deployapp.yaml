@@ -32,7 +32,7 @@ jobs:
             git clone https://github.com/theoafactor/rev_app_helm.git rev_app_helm
             cd rev_app_helm 
             cd rev-app-chart/templates
-            sed -i 's/rev_app:1/rev_app:2/' deployment.yaml
+            sed -i 's/rev_app:\d?/rev_app:2/' deployment.yaml
             
             git remote set-url origin https://${{ secrets.PROJECT_TOKEN }}@github.com/theoafactor/rev_app_helm.git
 
