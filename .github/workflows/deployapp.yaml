@@ -11,7 +11,7 @@ jobs:
         - name: "checkout from workflows"
           uses: actions/checkout@v4
         
-        - name: "Build the Docker image"
+        - name: "Build the Docker image (Testing)"
           run: |
             docker build -t theoafactor/rev_app:2 .
 
